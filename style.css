@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Optimal", sans-serif;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-600: 1.5rem;
+
+  --soft-blue: 215, 51%, 70%;
+  --cyan: 178, 100%, 50%;
+
+  --main-bg: 217, 54%, 11%;
+  --card-bg: 216, 50%, 16%;
+  --line: 215, 32%, 27%;
+  --white: 0 0% 100%;
+}
+
+body {
+  /* font-size: 18px; */
+  background-color: hsl(var(--main-bg));
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.cyan {
+  color: hsl(var(--cyan));
+}
+
+.main-text {
+  /* padding: 2rem; */
+}
+/* Start */
+
+/* .container {
+  margin: auto;
+  width: 90%;
+  padding: 1.1rem;
+  color: white;
+  border-radius: 1.2rem;
+} */
+
+.container {
+  /* padding-inline: 2rem; */
+  /* margin-inline: var(--mi-gap, 4rem);
+  margin-block: var(--mb-gap, 4rem); */
+  margin: 1em;
+  /* margin-left: minmax(4rem, auto); */
+  /* padding-block: 2rem; */
+  padding: 1.5em;
+  max-width: 25em;
+  background-color: hsl(var(--card-bg));
+  color: hsl(var(--white));
+  /* border: 2px solid orange; */
+  border-radius: 0.5em;
+}
+
+@media (min-width: 28.125em) {
+  .container {
+    margin-inline: auto;
+  }
+}
+
+.main-image {
+  /* padding: 0.2rem; */
+  /* margin-inline: auto; */
+  /* border: 2px solid hotpink; */
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+  /* padding: 0.5em; */
+}
+
+.main-image:hover::after,
+.main-image:focus::after {
+  content: "";
+  /* z-index: 100; */
+  color: hsl(var(--cyan) / 0.1);
+  background-color: hsl(var(--cyan) / 0.1);
+}
+
+/* eye effect */
+
+.eye {
+  /* display: none; */
+  z-index: -1;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 75% 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border: 15px solid hsl(var(--cyan));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shut {
+  width: 300px;
+  height: 160px;
+  /* background: #fff; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 999;
+}
+
+/* .shut span {
+  display: block;
+  width: 100%;
+  height: 15%;
+  background: #ffb6b6;
+  border-radius: 0 0 60% 60%;
+  transition: 0.4s all;
+} */
+
+.eye:hover > .shut span {
+  /* height: 100%; */
+}
+
+.main-image:hover ~ .eye,
+.main-image:focus ~ .eye,
+.eye:hover {
+  z-index: 5;
+  transform: translateY(-50%, 50%) rotate(45deg);
+  /* display: block; */
+}
+
+#test {
+  height: inherit;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flow > * {
+  margin-block: 1rem;
+}
+
+.profile > img {
+  align-self: start;
+  width: 50px;
+  aspect-ratio: 1;
+}
+
+.cyan-hover:hover,
+.cyan-hover:focus {
+  color: hsl(var(--cyan));
+}
