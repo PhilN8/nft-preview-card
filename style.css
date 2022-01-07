@@ -181,19 +181,41 @@ p {
   height: inherit;
 }
 
+.main-text {
+  border-bottom: 0.5px solid hsla(var(--white) / 0.4);
+  margin-block-end: 0.8em;
+}
+
 .flex {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .flow > * {
   margin-block: 1rem;
 }
 
+hr {
+  opacity: 0.4;
+  /* height: 2em; */
+}
+
+.center-text {
+  justify-content: space-between;
+}
+
+.profile {
+  gap: 1em;
+}
+
 .profile > img {
   align-self: start;
   width: 50px;
   aspect-ratio: 1;
+}
+
+.profile > p {
+  align-self: center;
 }
 
 .cyan-hover:hover,
